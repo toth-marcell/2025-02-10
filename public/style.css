@@ -1,0 +1,16 @@
+body {
+  max-width: 132ch;
+  margin: 50px auto;
+  background: hsl(220deg, 25%, 10%);
+  color: white;
+}
+form > * {
+  display: block;
+  margin-bottom: 10px;
+}
+#loginForms > form {
+  display: inline-block;
+  border: 1px solid currentColor;
+  margin-right: 100px;
+  padding: 20px;
+}

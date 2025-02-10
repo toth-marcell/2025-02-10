@@ -1,0 +1,28 @@
+<%- include("head") -%> <% if (typeof msg != "undefined") { %>
+<p><%= msg %></p>
+<% } %>
+<div id="loginForms">
+  <form action="/login" method="post">
+    <label>
+      Name
+      <input type="text" name="name">
+    </label>
+    <label>
+      Password
+      <input type="text" name="password">
+    </label>
+    <button>Login</button>
+  </form>
+  <form action="/register" method="post">
+    <label>
+      Name
+      <input type="text" name="name">
+    </label>
+    <label>
+      Password
+      <input type="text" name="password">
+    </label>
+    <button>Register</button>
+  </form>
+</div>
+<%- include("foot") -%>
