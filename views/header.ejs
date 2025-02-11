@@ -1,4 +1,9 @@
 <a href="/">
   <h1><%= siteName %></h1>
 </a>
+<% if (user) { %>
+<span>Logged in as <%= user.name %></span>
+<a href="/logout">logout</a>
+<% } else { %>
 <a href="/login">login</a>
+<% } %>

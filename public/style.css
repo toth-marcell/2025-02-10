@@ -3,6 +3,7 @@ body {
   margin: 50px auto;
   background: hsl(220deg, 25%, 10%);
   color: white;
+  font-size: 12.5pt;
 }
 form > * {
   display: block;
@@ -13,4 +14,10 @@ form > * {
   border: 1px solid currentColor;
   margin-right: 100px;
   padding: 20px;
+}
+a {
+  color: currentColor;
+}
+a:hover {
+  text-decoration-thickness: 0.3em;
 }
