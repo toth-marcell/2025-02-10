@@ -73,7 +73,7 @@ app.post("/login", async (req, res) => {
     }
   } else {
     res.render("login", {
-      msg: `User with name ${existingUser.name} doesn't exits!`,
+      msg: `User with name ${req.body.name} doesn't exist!`,
     });
   }
 });
@@ -100,6 +100,10 @@ app.post("/register", async (req, res) => {
 app.get("/logout", async (req, res) => {
   res.clearCookie("user");
   res.redirect("/");
+});
+
+app.get("/profile", async (req, res) => {
+  res.render("profile", { profile: await User.findByPk(req.query.id) });
 });
 
 const port = process.env["PORT"] || 8080;

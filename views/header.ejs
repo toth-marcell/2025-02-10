@@ -1,9 +1,19 @@
-<a href="/">
-  <h1><%= siteName %></h1>
-</a>
-<% if (user) { %>
-<span>Logged in as <%= user.name %></span>
-<a href="/logout">logout</a>
-<% } else { %>
-<a href="/login">login</a>
-<% } %>
+<header>
+  <div>
+    <a href="/">
+      <h1><%= siteName %></h1>
+    </a>
+  </div>
+  <div></div>
+  <div>
+    <% if (user) { %>
+    <span
+      >Logged in as
+      <a href="/profile?id=<%= user.id %>"><%= user.name %></a></span
+    >
+    <a href="/logout" class="btn">logout</a>
+    <% } else { %>
+    <a href="/login" class="btn">login</a>
+    <% } %>
+  </div>
+</header>

@@ -1,7 +1,7 @@
 <%- include("head") -%>
 <ul>
   <% for (user of users) { %>
-  <li><%= user.name %></li>
+  <li><a href="/profile?id=<%= user.id %>"><%= user.name %></a></li>
   <% } %>
 </ul>
 <%- include("foot") -%>
