@@ -14,7 +14,7 @@ export const User = sequelize.define("User", {
   },
 });
 
-export const Person = sequelize.define("User", {
+export const Person = sequelize.define("Person", {
   name: {
     type: DataTypes.STRING,
     allowNull: false,

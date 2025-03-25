@@ -1,5 +1,5 @@
 import express from "express";
-import { User } from "./models.js";
+import { User, Person } from "./models.js";
 import { Login, Register, ObtainToken, ValidateToken } from "./auth.js";
 
 const app = express();
@@ -48,4 +48,21 @@ app.post("/register", async (req, res) => {
 
 app.get("/profiles", async (req, res) => {
   res.json(await User.findAll({ attributes: ["name", "createdAt"] }));
+});
+
+app.get("/person", async (req, res) => {
+  res.json(await Person.findAll());
+});
+
+app.post("/person", async (req, res) => {
+  const { name, age } = req.body;
+  const newPerson = await Person.create({ name: name, age: age });
+  res.json(newPerson);
+});
+
+app.delete("/person", async (req, res) => {
+  const { id } = req.query;
+  const person = await Person.findByPk(id);
+  await person.destroy();
+  res.end();
 });
