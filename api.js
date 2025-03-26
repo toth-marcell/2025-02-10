@@ -66,3 +66,15 @@ app.delete("/person", async (req, res) => {
   await person.destroy();
   res.end();
 });
+
+app.delete("/deleteall", async (req, res) => {
+  await Person.destroy({ where: {} });
+  res.end();
+});
+
+app.put("/person", async (req, res) => {
+  const { id, name, age } = req.body;
+  const person = await Person.findByPk(id);
+  await person.update({ name: name, age: age });
+  res.json(person);
+});
